@@ -1,8 +1,8 @@
 package main
 
-import "fmt"
+import "go.uber.org/zap"
 
 func main() {
-	fmt.Println("3222")
-	fmt.Println("k")
+	logger,_ := zap.NewProduction()
+	logger.Warn("warning test")
 }
