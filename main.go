@@ -5,11 +5,15 @@ import (
 	"fmt"
 )
 
-func getRetriever() infra.Retriever{
+func getRetriever() retriever{
 	return infra.Retriever{}
 }
 
+type retriever interface {
+	Get(string) string
+}
+
 func main() {
-	var retriever infra.Retriever = getRetriever()
-	fmt.Println(retriever.Get("http://www.freebuf.com"))
+	var r  = getRetriever()
+	fmt.Println(r.Get("http://www.freebuf.com"))
 }
