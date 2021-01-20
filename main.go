@@ -1,8 +1,11 @@
 package main
 
-import "go.uber.org/zap"
+import (
+	"Go_project/infra"
+	"fmt"
+)
 
 func main() {
-	logger,_ := zap.NewProduction()
-	logger.Warn("warning test")
+retriever := infra.Retriever{}
+fmt.Println(retriever.Get("http://www.freebuf.com"))
 }
