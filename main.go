@@ -5,7 +5,11 @@ import (
 	"fmt"
 )
 
+func getRetriever() infra.Retriever{
+	return infra.Retriever{}
+}
+
 func main() {
-retriever := infra.Retriever{}
-fmt.Println(retriever.Get("http://www.freebuf.com"))
+	var retriever infra.Retriever = getRetriever()
+	fmt.Println(retriever.Get("http://www.freebuf.com"))
 }
